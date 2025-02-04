@@ -28,7 +28,7 @@ fetch("detalhamentopessoal.json").then((resposta) => {
             filtrados.forEach(element => {
                 const li = document.createElement("li");
                 const a = document.createElement("a");
-                a.href = `paginaFuncionario.html`;
+                a.href = "paginaFuncionario.html";
                 a.textContent = element;
                 li.appendChild(a);
                 resultado.appendChild(li);  // Adiciona o item ao resultado
