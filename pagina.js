@@ -6,8 +6,8 @@ fetch("detalhamentopessoal.json")
     .then((resposta) => resposta.json())
     .then((informacoes) => {
         // converte um objeto JavaScript (informacoes) para uma string JSON.
-        //Se você quiser armazenar um objeto no localStorage, precisa primeiro transformá-lo em uma string JSON.
-        localStorage.setItem("informacoes", JSON.stringify(informacoes));
+        //Se você quiser armazenar um objeto no sessionStorage, precisa primeiro transformá-lo em uma string JSON.
+        sessionStorage.setItem("informacoes", JSON.stringify(informacoes));
 
         // Preenchendo a lista de cargos
         informacoes.data.forEach((listagem) => {
@@ -31,12 +31,12 @@ fetch("detalhamentopessoal.json")
                 filtrados.forEach(element => {
                     const li = document.createElement("li");
                     const a = document.createElement("a");
-                    a.href = "paginaFuncionario.html";  // Navega para a segunda página
+                    a.href = "http://127.0.0.1:5500/paginaFuncionario.html";  // Navega para a segunda página
                     a.textContent = element;
 
-                    // Salva o cargo no localStorage para usar na outra página
+                    // Salva o cargo no sessionStorage para usar na outra página
                     a.addEventListener("click", () => {
-                        localStorage.setItem("cargoBusca", element); // Salva o cargo no localStorage
+                        sessionStorage.setItem("cargoBusca", element); // Salva o cargo no sessionStorage
                     });
 
                     li.appendChild(a);

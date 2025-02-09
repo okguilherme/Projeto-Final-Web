@@ -1,12 +1,16 @@
 function inforPessoal() {
     const ref = document.querySelector(".index2");
 
-    // Acessa o valor de busca do localStorage
-    const informacoes = JSON.parse(localStorage.getItem("informacoes"));
-    const busca = localStorage.getItem("cargoBusca").toLowerCase(); // Acessa de forma segura
+    if (!ref) {
+        return;  // Se não encontrar o elemento, interrompe a execução
+    }
+
+    // Acessa o valor de busca do sessionStorage
+    const informacoes = JSON.parse(sessionStorage.getItem("informacoes"));
+    const busca = sessionStorage.getItem("cargoBusca").toLowerCase(); // Acessa de forma segura
     const titulo1 = document.getElementById("titulo1");
 
-    // Verifica se o valor foi encontrado no localStorage
+    // Verifica se o valor foi encontrado no sessionStorage
     if (busca && informacoes) {
         informacoes.data.forEach(element => {
             if (element.Cargo.toLowerCase() === busca) {
