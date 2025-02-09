@@ -3,7 +3,7 @@ function inforPessoal() {
 
     // Acessa o valor de busca do localStorage
     const informacoes = JSON.parse(localStorage.getItem("informacoes"));
-    const busca = localStorage.getItem("cargoBusca")?.toLowerCase(); // Acessa de forma segura
+    const busca = localStorage.getItem("cargoBusca").toLowerCase(); // Acessa de forma segura
     const titulo1 = document.getElementById("titulo1");
 
     // Verifica se o valor foi encontrado no localStorage

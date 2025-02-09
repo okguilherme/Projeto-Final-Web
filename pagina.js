@@ -5,6 +5,8 @@ let nomesCargos = [];
 fetch("detalhamentopessoal.json")
     .then((resposta) => resposta.json())
     .then((informacoes) => {
+        // converte um objeto JavaScript (informacoes) para uma string JSON.
+        //Se você quiser armazenar um objeto no localStorage, precisa primeiro transformá-lo em uma string JSON.
         localStorage.setItem("informacoes", JSON.stringify(informacoes));
 
         // Preenchendo a lista de cargos
