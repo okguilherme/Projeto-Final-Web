@@ -1,8 +1,3 @@
-/* Azul elétrico (#007bff) → Fundo ou botões 
-Amarelo vibrante (#ffcc00) → Destaques e chamadas de atenção 
-Vermelho intenso (#ff4444) → Alertas ou títulos importantes 
-Branco puro (#ffffff) → Texto principal para máxima legibilidade */
-
 body {
     background-color: #e9e8e8;
     margin: 0;
@@ -69,4 +64,5 @@ h1 {
     z-index: 1000;
     margin-top: 80px;
     /* Para não sobrepor a topbar */
+    overflow: auto;
 }
