@@ -6,24 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Final Web</title>
     <link rel="stylesheet" href="pagina.css">
-
 </head>
 
 <body>
-    <header>
+    <div class="topbar">
         <h1>Projeto Final Web</h1>
-    </header>
+        <div class="index1">
+            <input type="text" id="searchInput" placeholder="Digite o cargo">
+            <div class="resul">
+                <ul id="resultados"></ul>
+            </div>
+        </div>
+    </div>
 
     <main>
-        <div class="index1">
+        <div class="conteudo">
+            <h3>Conteúdo da página gráficos</h3>
 
-            <input type="text" id="searchInput" placeholder="Digite o cargo">
-            <ul id="resultados"></ul>
         </div>
-
     </main>
     <script src="paginaFuncionario.js"></script>
     <script src="pagina.js"></script>
+
+
 </body>
 
 </html>

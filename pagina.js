@@ -1,6 +1,8 @@
 const referencia = document.querySelector(".index1");
 let comparador = [];
 let nomesCargos = [];
+const limite = 5;
+let resultadosLimitados = [];
 
 fetch("detalhamentopessoal.json")
     .then((resposta) => resposta.json())
@@ -26,12 +28,15 @@ fetch("detalhamentopessoal.json")
             if (busca.length > 0) {
                 // Filtra os cargos de acordo com a busca
                 const filtrados = nomesCargos.filter(item => item.toLowerCase().includes(busca));
+                // Limita os resultados aqui
+                resultadosLimitados = filtrados.slice(0, limite);
 
                 // Exibe os cargos filtrados
-                filtrados.forEach(element => {
+                resultadosLimitados.forEach(element => {
                     const li = document.createElement("li");
                     const a = document.createElement("a");
                     a.href = "http://127.0.0.1:5500/paginaFuncionario.html";  // Navega para a segunda página
+
                     a.textContent = element;
 
                     // Salva o cargo no sessionStorage para usar na outra página
