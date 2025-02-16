@@ -7,8 +7,6 @@ let resultadosLimitados = [];
 fetch("detalhamentopessoal.json")
     .then((resposta) => resposta.json())
     .then((informacoes) => {
-        // converte um objeto JavaScript (informacoes) para uma string JSON.
-        //Se você quiser armazenar um objeto no sessionStorage, precisa primeiro transformá-lo em uma string JSON.
         sessionStorage.setItem("informacoes", JSON.stringify(informacoes));
 
         // Preenchendo a lista de cargos
@@ -26,30 +24,39 @@ fetch("detalhamentopessoal.json")
             resultado.innerHTML = "";  // Limpa os resultados anteriores
 
             if (busca.length > 0) {
-                // Filtra os cargos de acordo com a busca
                 const filtrados = nomesCargos.filter(item => item.toLowerCase().includes(busca));
-                // Limita os resultados aqui
                 resultadosLimitados = filtrados.slice(0, limite);
 
-                // Exibe os cargos filtrados
+                if (resultadosLimitados.length > 0) {
+                    document.querySelector(".resul").style.display = "block";
+                } else {
+                    document.querySelector(".resul").style.display = "none";
+                }
+
                 resultadosLimitados.forEach(element => {
                     const li = document.createElement("li");
                     const a = document.createElement("a");
-                    a.href = "http://127.0.0.1:5500/paginaFuncionario.html";  // Navega para a segunda página
-
+                    a.href = "paginaFuncionario.html";  // Navega para a segunda página
                     a.textContent = element;
 
-                    // Salva o cargo no sessionStorage para usar na outra página
                     a.addEventListener("click", () => {
-                        sessionStorage.setItem("cargoBusca", element); // Salva o cargo no sessionStorage
+                        sessionStorage.setItem("cargoBusca", element);
                     });
 
                     li.appendChild(a);
-                    resultado.appendChild(li);  // Adiciona o item ao resultado
+                    resultado.appendChild(li);
                 });
+            } else {
+                document.querySelector(".resul").style.display = "none";
             }
         }
 
-        // Associa a função de busca ao evento de input
         document.getElementById("searchInput").addEventListener("input", buscarCargos);
     });
+
+// Esconde a lista se o usuário clicar fora do input ou dos resultados
+document.addEventListener("click", (e) => {
+    if (!document.querySelector(".index1").contains(e.target)) {
+        document.querySelector(".resul").style.display = "none";
+    }
+});
