@@ -1,7 +1,7 @@
 const referencia = document.querySelector(".index1");
 let comparador = [];
 let nomesCargos = [];
-const limite = 5;
+const limite = 10;
 let resultadosLimitados = [];
 
 fetch("detalhamentopessoal.json")
