@@ -4,7 +4,7 @@ let nomesCargos = [];
 const limite = 10;
 let resultadosLimitados = [];
 
-fetch("detalhamentopessoal.json")
+fetch("https://raw.githubusercontent.com/okguilherme/detalhamentopessoal/refs/heads/main/detalhamentopessoal.json")
     .then((resposta) => resposta.json())
     .then((informacoes) => {
         sessionStorage.setItem("informacoes", JSON.stringify(informacoes));
