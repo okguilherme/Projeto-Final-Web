@@ -27,7 +27,7 @@ function criarGraficoSalarios(dados) {
     window.graficoSalarios = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Professor', 'Guarda', 'Auxiliar', 'Aux.Saúde', 'professor EI', 'Ag. Endemias', 'Ag. transito', 'Guarda Cívil', 'Médico'],
+            labels: ['Professor', 'Guarda', 'Auxiliar', 'Ag. Saúde', 'professor E.I.', 'Professor E.F.', 'Ag. Endemias', 'Ag. de Trânsito', 'Guarda Cívil', 'Médico'],
             datasets: [{
                 label: 'Total de Gastos em Salário Líquido (R$)',
                 data: totais,
@@ -39,7 +39,6 @@ function criarGraficoSalarios(dados) {
         options: {
             responsive: true,
             plugins: {
-                legend: { position: 'top' },
                 tooltip: {
                     callbacks: {
                         label: function (context) {

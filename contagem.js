@@ -1,10 +1,10 @@
-// Função para contar funcionários por cargo e pegar os 10 maiores
+// Função para contar funcionários por cargo
 function contarFuncionariosPorCargo(dados) {
     const funcionarios = dados.data;
     const contagemPorCargo = {};
 
     funcionarios.forEach(funcionario => {
-        const cargo = funcionario.Cargo;
+        const cargo = funcionario.Cargo.replace(/^\d+\s*-\s*/, '');
         contagemPorCargo[cargo] = (contagemPorCargo[cargo] || 0) + 1;
     });
 
@@ -15,14 +15,14 @@ function contarFuncionariosPorCargo(dados) {
         .slice(0, 10);
 }
 
-// Função para criar o gráfico sem nomes no eixo X
+// Função para criar o gráfico 
 function criarGrafico(dados) {
     const ctx = document.getElementById('graficoCargos').getContext('2d');
 
 
 
     // Extrai os cargos e quantidades
-    const cargos = dados.map(item => item.Cargo.replace(/^\d+\s*-\s*/, ''));
+    const cargos = dados.map(item => item.Cargo);
     const quantidades = dados.map(item => item.Quantidade);
 
     window.meuGrafico = new Chart(ctx, {
@@ -41,7 +41,6 @@ function criarGrafico(dados) {
             responsive: true,
             plugins: {
                 tooltip: {
-                    enabled: true,
                     callbacks: {
                         label: function (tooltipItem) {
                             return `${dados[tooltipItem.dataIndex].Cargo}: ${tooltipItem.raw} funcionários`;
