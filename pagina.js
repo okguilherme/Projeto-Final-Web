@@ -21,7 +21,7 @@ document.querySelectorAll('input[name="tipoBusca"]').forEach(radio => {
     });
 });
 
-
+//arantindo que apenas valores únicos sejam armazenados
 function atualizandoValores() {
     if (!informacoesJSON)
         return;
