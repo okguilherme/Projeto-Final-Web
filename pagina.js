@@ -21,7 +21,7 @@ document.querySelectorAll('input[name="tipoBusca"]').forEach(radio => {
     });
 });
 
-//arantindo que apenas valores únicos sejam armazenados 
+//garantindo que apenas valores únicos sejam armazenados 
 // e pegando os valores de tipoDeBusca
 function atualizandoValores() {
     if (!informacoesJSON)
