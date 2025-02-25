@@ -1,0 +1,137 @@
+body {
+    background-color: #e9e8e8;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.topbar {
+    width: 100%;
+    height: 120px;
+    background-color: #1e3a8a;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+    /*0 → Define nenhum espaçamento (0 pixels) acima e abaixo 
+    20px → Define um espaçamento de 20 pixels nas laterais esquerda e direita*/
+    padding: 0 20px;
+}
+
+h1 {
+    margin-right: 20%;
+}
+
+.index1 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* Necessário para a posição do 'resul' */
+}
+
+.index1 input {
+    width: 450px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    /*tornando-o sem contorno visível */
+    border: none;
+    box-sizing: border-box;
+
+}
+
+.typeSearch {
+    display: inline;
+    width: 300px;
+    height: 100px;
+    justify-content: center;
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 20px;
+    border: 3px solid;
+    border-radius: 10px;
+
+}
+
+#options {
+    width: 300px;
+}
+
+.typeSearch input {
+    border: 3px solid;
+    margin: 10px;
+    margin-right: 2px;
+}
+
+.resul {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 300px;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1002;
+    color: #1e3a8a;
+    display: none;
+    background: white;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+ul.resul li:hover {
+    background: #1e3a8a;
+    color: white;
+    cursor: pointer;
+}
+
+.conteudo {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 550px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 5px #1e3a8a;
+    z-index: 1000;
+    margin-top: 80px;
+    /* Para não sobrepor a topbar */
+    overflow: auto;
+    text-align: center;
+}
+
+ul {
+    /*remove os marcadores padrão (pontos, números ou ícones) de uma lista (<ul> ou <ol>) */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    padding: 10px;
+    /* a borda inferior de um elemento */
+    border-bottom: 1px solid #ddd;
+}
+
+/* aplica estilos apenas ao último item (<li>) */
+ul li:last-child {
+    border-bottom: none;
+}
+
+ul li a {
+    /* remove qualquer estilo de decoração aplicado ao texto */
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+ul li:hover {
+    background: #1e3a8a;
+}
+
+ul li:hover a {
+    color: white;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Final Web</title>
+    <link rel="stylesheet" href="pagina.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="topbar">
+            <h1>Projeto Final Web</h1>
+            <div class="index1">
+                <input type="text" id="searchInput" placeholder="Digite sua Busca Aqui">
+                <div class="resul">
+                    <ul id="resultados"></ul>
+                </div>
+
+            </div>
+            <div class="typeSearch">
+                <b>
+                    <h4> Selecione o Tipo de Busca</h4>
+                </b>
+                <div id="options">
+                    <label><input type="radio" name="tipoBusca" value="Cargo" checked>Cargo</label>
+                    <label><input type="radio" name="tipoBusca" value="Nome do funcionário">Nome</label>
+                    <label><input type="radio" name="tipoBusca" value="Setor">Setor</label>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="conteudo">
+            <canvas id="graficoCargos"></canvas>
+            <h6>
+                Cargos com mais servidores<br>
+                *limitado aos 10 maiores
+            </h6>
+
+            <canvas id="graficoSalarios"></canvas>
+            <h6>
+                Gastos com remuneração de funcionários<br>
+                *limitado aos 10 maiores
+            </h6>
+
+        </div>
+    </main>
+
+    <script src="pagina.js"></script>
+    <script src="contagem.js"></script>
+    <script src="salario.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Acesso</title>
+  <!-- <style>
+    @import url("login.css");
+  </style> -->
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="left-section">
+      <h1>BEM VINDO</h1>
+      <img src="lupa.jpg" alt="Lupa" class="logo">
+      <p>Saiba mais sobre quem trabalha em sua cidade</p>
+    </div>
+    <div class="right-section">
+      <form action="pagina.html" method="GET">
+        <label for="city">Escolha a Cidade</label>
+        <select id="city" name="city" required>
+          <option value="selecione" disabled selected>Selecione</option>
+          <option value="quixada">Quixadá</option>
+        </select>
+        <button type="submit">Acessar</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>
