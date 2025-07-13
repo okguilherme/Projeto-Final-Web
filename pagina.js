@@ -39,7 +39,7 @@ function atualizandoValores() {
 
 
 
-fetch("https://raw.githubusercontent.com/okguilherme/detalhamentopessoal/refs/heads/main/detalhamentopessoal.json")
+fetch("detalhamentopessoal.json")
     .then((resposta) => resposta.json())
     .then((informacoes) => {
         informacoesJSON = informacoes;

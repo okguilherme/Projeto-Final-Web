@@ -54,7 +54,7 @@ function criarGraficoSalarios(dados) {
 }
 
 function carregarDados() {
-    fetch("https://raw.githubusercontent.com/okguilherme/detalhamentopessoal/refs/heads/main/detalhamentopessoal.json")
+    fetch("detalhamentopessoal.json")
         .then(response => response.json())
         .then(dados => {
             const resultado = somarSalariosPorCargo(dados);

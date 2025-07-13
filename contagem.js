@@ -57,7 +57,7 @@ function criarGrafico(dados) {
 
 // Função para carregar os dados ao iniciar a página
 function carregarDados() {
-    fetch("https://raw.githubusercontent.com/okguilherme/detalhamentopessoal/refs/heads/main/detalhamentopessoal.json")
+    fetch("detalhamentopessoal.json")
         .then(response => {
             return response.json();
         })
